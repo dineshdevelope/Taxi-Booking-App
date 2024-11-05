@@ -1,6 +1,7 @@
 import Header from "./components/Header"
 import Request from "./components/Request"
 import { Toaster } from "react-hot-toast"
+import Table from "./components/Table"
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div>
       <Header />
       <Toaster />
-      <Request/>
+       <Request/> 
+     <Table />
     </div>
     </>
   )

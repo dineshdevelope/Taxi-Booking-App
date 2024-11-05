@@ -6,16 +6,18 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import API_URL from "../Constants/URL.jsx";
 
+
 const formSchema = z.object({
   username: z.string().min(4).max(20),
-  phone: z.string().min(10).max(10),
+  phone: z.string().regex(/^\d{10}$/, { message: "Phone number must be exactly 10 digits" }),
   date: z.string(),
   pickupaddress: z.string().min(3).max(200),
   dropaddress: z.string().min(3).max(200),
-  killometre: z.string().min(0).max(800),
+  killometre: z.string().min(0).max(800).optional(),
 });
 
 const Request = () => {
+
   const {
     register,
     handleSubmit,
@@ -27,25 +29,89 @@ const Request = () => {
 
   const sendTask = async (data) => {
     try {
-      console.log(data);
-      toast.success("Taxi Request Submitted Successfully 👍");
+  
+      const dateObj = new Date(data.date);
+      
+      const formattedDate = dateObj.toLocaleString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+      }).replace(',', '');
+
+      console.log({ ...data, date: formattedDate });
+
       await axios.post(API_URL, {
         username: data.username,
         phone: data.phone,
-        date: data.date,
+        date: formattedDate,
         pickupaddress: data.pickupaddress,
         dropaddress: data.dropaddress,
-        kilometre: data.killometre,
+        kilometre: data.killometre ,
       });
-     
+
+       toast.success("Taxi Request Submitted Successfully 👍"); 
+   
       reset();
     } catch (error) {
+
       console.error("Error submitting form:", error);
+
+       toast.custom((t) => (
+        <div
+          className={`${
+            t.visible ? 'animate-enter' : 'animate-leave'
+          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+        >
+          <div className="flex-1 w-0 p-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 pt-0.5">
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src="https://t4.ftcdn.net/jpg/05/18/90/77/360_F_518907767_gFwIrQuJk8d37UJrSIUW2uLRRAOM5epL.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="ml-3 flex-1">
+                <p className="text-sm font-medium text-gray-900">
+                  Sorry Server Issue😲
+                </p>
+                <p className="mt-1 text-sm text-gray-500">
+                  You can book your trip by phone call..!
+                </p>
+    
+                <p><a  href="tel:7305504500">
+                   <div className='flex gap-3 items-center justify-center mt-1 text-sm text-gray-500'>
+                   <div>
+                   <img src="https://i2.pngimg.me/thumb/f/720/m2K9A0b1H7b1K9A0.jpg" alt="phone-icon" className='w-5' /> 
+                  </div>
+                  <div>
+                  7305504500
+                  </div>
+                   </div>
+                   </a></p>
+    
+              </div>
+            </div>
+          </div>
+          <div className="flex border-l border-gray-200">
+            <button
+              onClick={() => toast.dismiss(t.id)}
+              className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      ))
+      reset();
     }
   };
 
   return (
     <div>
+      
       <div className="flex justify-center min-h-screen items-center bg-gray-100">
         <div className="bg-white p-6 rounded shadow-lg w-full max-w-xl">
           <h2 className="text-2xl font-semibold mb-4 text-center">Travels Booking Form</h2>
@@ -151,6 +217,7 @@ const Request = () => {
           </form>
         </div>
       </div>
+
     </div>
   );
 };
