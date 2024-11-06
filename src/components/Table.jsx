@@ -37,7 +37,7 @@ const Table = () => {
   return (
     <div>
         <div className='text-center pt-5 pb-2'>
-            <h1>Travel Requests</h1>
+            <h1>Travel Requests <span className='bg-pink-400 p-2 rounded-full text-white font-semibold text-sm mx-2'>{formdata.length}</span></h1>
         </div>
         <div className="overflow-x-auto max-w-5xl mx-auto">
   <table className="table ">
