@@ -13,6 +13,22 @@ const Table = () => {
         //console.log(res.data);
         setFormdata(res.data);
       };
+ 
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const year = date.getFullYear();
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        
+        return `${month}-${day}-${year} T ${hours}:${minutes}`;
+    }
+    
+    const formattedDate = formatDate('2024-06-11T13:02');
+    console.log(formattedDate);  // Output: "06-11-2024 T 13:02"
+    
+     
 
       useEffect(() => {
         showData();
@@ -23,27 +39,27 @@ const Table = () => {
         <div className='text-center pt-5 pb-2'>
             <h1>Travel Requests</h1>
         </div>
-        <div className="overflow-x-auto">
-  <table className="table">
+        <div className="overflow-x-auto max-w-5xl mx-auto">
+  <table className="table ">
     {/* head */}
     <thead>
       <tr>
-        
+        <th>S.No</th>
         <th>Name</th>
-        <th>Number</th>
-        <th>View </th>
+        <th>Date & Time</th>
+        
       </tr>
     </thead>
     <tbody>
       
      {
-        formdata.map((item)=>{
+        formdata.map((item,index)=>{
            return (
             <tr className="bg-base-200 " key={item._id}>
-       
+            <td>{index + 1}</td>
             <td>{item.username}</td>
-            <td>{item.phone}</td>
-            <td className='bg-pink-300  sm:bg-inherit rounded sm:rounded-none'>View</td>
+            <td>{formatDate(item.date.slice(0,16))}</td>
+            
           </tr>
            )
 

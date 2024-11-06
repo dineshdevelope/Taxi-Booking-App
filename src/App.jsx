@@ -11,8 +11,8 @@ function App() {
     <div>
       <Header />
       <Toaster />
-       <Request/> 
-     <Table />
+      <Request/> 
+      <Table />
     </div>
     </>
   )
