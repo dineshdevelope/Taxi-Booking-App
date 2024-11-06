@@ -3,16 +3,17 @@ import Request from "./components/Request"
 import { Toaster } from "react-hot-toast"
 import Table from "./components/Table"
 
-
 function App() {
  
   return (
     <>
     <div>
-      <Header />
+      
+      <Header /> 
       <Toaster />
       <Request/> 
-      <Table />
+      <Table /> 
+
     </div>
     </>
   )
