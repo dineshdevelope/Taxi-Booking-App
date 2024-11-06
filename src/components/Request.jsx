@@ -69,13 +69,13 @@ const Request = () => {
               <div className="flex-shrink-0 pt-0.5">
                 <img
                   className="h-10 w-10 rounded-full"
-                  src="https://t4.ftcdn.net/jpg/05/18/90/77/360_F_518907767_gFwIrQuJk8d37UJrSIUW2uLRRAOM5epL.jpg"
+                  src="https://www.shutterstock.com/image-vector/srk-letter-initial-logo-design-260nw-2321722949.jpg"
                   alt=""
                 />
               </div>
               <div className="ml-3 flex-1">
                 <p className="text-sm font-medium text-gray-900">
-                  Sorry Server Issue😲
+                  Oops..! Server Issue 😲
                 </p>
                 <p className="mt-1 text-sm text-gray-500">
                   You can book your trip by phone call..!

@@ -26,7 +26,7 @@ const Table = () => {
     }
     
     const formattedDate = formatDate('2024-06-11T13:02');
-    console.log(formattedDate);  // Output: "06-11-2024 T 13:02"
+    //console.log(formattedDate);  // Output: "06-11-2024 T 13:02"
     
      
 

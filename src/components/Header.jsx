@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import profileImg from "../assets/images/rajesh.png";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isProfileDropdownOpen, setProfileDropdownOpen] = useState(false);
@@ -53,7 +54,7 @@ const Header = () => {
                     <span className="text-lg font-bold">8 Requests</span>
                     <span className="text-info">Total K/m: 100</span>
                     <div className="card-actions">
-                      <button className="btn btn-primary btn-block" onClick={closeDropdowns}>View Request</button>
+                      <Link to={"/viewrequest"} className="btn btn-primary btn-block" onClick={closeDropdowns}>View Request</Link>
                     </div>
                   </div>
                 </div>
@@ -66,7 +67,10 @@ const Header = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="User Avatar"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    
+                    />
+                 
                 </div>
               </div>
               {isProfileDropdownOpen && (
@@ -74,12 +78,12 @@ const Header = () => {
                   tabIndex={0}
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                   <li onClick={closeDropdowns}>
-                    <a className="justify-between">
-                      Profile
+                    <Link to={"/makerequest"} className="justify-between">
+                      Book Trip
                       <span className="badge">New</span>
-                    </a>
+                    </Link>
                   </li>
-                  <li onClick={closeDropdowns}><a>Settings</a></li>
+                  <li onClick={closeDropdowns}><Link to={"/viewbookings"}>View Bookings</Link></li>
                   <li onClick={closeDropdowns}><a>Logout</a></li>
                 </ul>
               )}
