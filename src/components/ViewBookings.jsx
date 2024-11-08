@@ -61,7 +61,7 @@ const ViewBookings = () => {
       <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
       {item.username}
       </h5>
-      <a href="tel:+917305504500" className='mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>{item.phone}</a>
+      <a href= {`tel:+91${item.phone}`} className='mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>{item.phone}</a>
       </div>
       
       <div className="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-x-auto">
