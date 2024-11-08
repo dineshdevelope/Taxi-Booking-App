@@ -24,7 +24,10 @@ const MainContent = () => {
       {/* Footer Section */}
       <footer className="bg-gray-800 text-white py-6 text-center">
         <p>&copy; 2024 S.R.K Travels. All rights reserved.</p>
-        <p>Contact us at srktravels@gmail.com</p>
+        <p>Contact us at <a href="mailto:srktravels97@gmail.com"
+>srktravels97@gmail.com</a></p>
+        
+            
       </footer>
      </div>
   )
