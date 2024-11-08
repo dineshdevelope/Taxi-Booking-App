@@ -6,6 +6,8 @@ import { BrowserRouter as Router,Route,Routes } from "react-router-dom"
 import ViewBookings from "./components/ViewBookings"
 import MainContent from "./components/MainContent"
 
+
+
 function App() {
  
   return (
@@ -15,9 +17,9 @@ function App() {
       <Router>
       <Header />
       <Toaster />
+     
       <Routes>
-
-      <Route path="/" element={<MainContent />} />
+      <Route path="/" element={<MainContent />} /> 
       <Route path="/makerequest" element={<Request />} />
       <Route path="/viewrequest" element={ <Table /> } />
       <Route path="/viewbookings" element={ <ViewBookings /> } />

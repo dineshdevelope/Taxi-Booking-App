@@ -21,10 +21,10 @@ const Header = () => {
 
   return (
     <div>
-      <div className='bg-pink-500 p-5 rounded'>
+      <div className='bg-red-400 p-5 rounded'>
         <div className="navbar bg-base-100 rounded-xl">
           <div className="flex-1">
-            <a className="btn btn-ghost text-xl">S.R.K TRAVELS</a>
+            <Link to={"/"} className="btn btn-ghost text-xl">S.R.K TRAVELS</Link>
           </div>
           <div className="flex-none">
             {/* Request Dropdown */}
