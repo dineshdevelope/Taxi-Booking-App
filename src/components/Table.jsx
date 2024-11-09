@@ -40,7 +40,7 @@ const Table = () => {
       <div className="text-center pt-5 pb-2">
         <h1>
           Travel Requests{" "}
-          <span className="bg-pink-400 p-2 rounded-full text-white font-semibold text-sm mx-2">
+          <span className="bg-red-400 p-2 rounded-md text-white font-semibold text-sm mx-2">
             {formdata.length}
           </span>
         </h1>

@@ -56,7 +56,7 @@ const MainContent = () => {
         </section>
 
         {/* About Us Section */}
-        <section id="about" className="bg-gray-100 py-1 sm:py-3">
+        <section id="about" className="bg-gray-100 py-1 sm:py-3 px-1">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold text-red-600">About Us</h2>
             <p className="mt-4 text-gray-800">We have been providing reliable taxi services for over 10 years.</p>

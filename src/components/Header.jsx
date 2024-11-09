@@ -24,7 +24,8 @@ const Header = () => {
       <div className='bg-red-400 p-5 rounded'>
         <div className="navbar bg-base-100 rounded-xl">
           <div className="flex-1">
-            <Link to={"/"} className="btn btn-ghost text-xl">S.R.K TRAVELS</Link>
+            <Link to={"/"} className="btn btn-ghost text-xl">S.R.K TAXI <span className='hidden sm:block'>SERVICES</span>
+            </Link>
           </div>
           <div className="flex-none">
             {/* Request Dropdown */}
@@ -54,7 +55,7 @@ const Header = () => {
                     <span className="text-lg font-bold">8 Requests</span>
                     <span className="text-info">Total K/m: 100</span>
                     <div className="card-actions">
-                      <Link to={"/viewrequest"} className="btn btn-primary btn-block" onClick={closeDropdowns}>View Request</Link>
+                      <Link to={"/viewrequest"} className="btn btn-neutral btn-block" onClick={closeDropdowns}>View Request</Link>
                     </div>
                   </div>
                 </div>
@@ -67,7 +68,7 @@ const Header = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="User Avatar"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    src="https://avatars.githubusercontent.com/u/133995516?v=4"
                     
                     />
                  
