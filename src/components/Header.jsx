@@ -85,7 +85,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li onClick={closeDropdowns}><Link to={"/viewbookings"}>View Bookings</Link></li>
-                  <li onClick={closeDropdowns}><a>Logout</a></li>
+                  <li onClick={closeDropdowns}><Link to={"/logout"}>Logout</Link></li>
                 </ul>
               )}
             </div>

@@ -5,6 +5,7 @@ import Table from "./components/Table"
 import { BrowserRouter as Router,Route,Routes } from "react-router-dom"
 import ViewBookings from "./components/ViewBookings"
 import MainContent from "./components/MainContent"
+import Logout from "./components/Logout"
 
 
 
@@ -23,6 +24,9 @@ function App() {
       <Route path="/makerequest" element={<Request />} />
       <Route path="/viewrequest" element={ <Table /> } />
       <Route path="/viewbookings" element={ <ViewBookings /> } />
+      <Route path="/logout" element={ <Logout /> } />
+
+
 
       </Routes>
      
